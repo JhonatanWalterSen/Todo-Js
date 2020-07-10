@@ -8,7 +8,7 @@ window.onload = () => {
         const todoText = todo.value;
         todo.value = '';
         todos.push(todoText)
-        console.log(todos)
+            // console.log(todos)
         const todoList = document.getElementById('todo-list')
         // todoList.innerHTML= '';
         // for (let i = 0; i < todos.length; i++) {
@@ -16,6 +16,13 @@ window.onload = () => {
         // }
         const todosTemplate = todos.map(t => '<li>' + t +'</li>');
         todoList.innerHTML = todosTemplate.join(''); //join toma todos los elementos y los junta
-        console.log(todosTemplate)
+            // console.log(todosTemplate);
+        const elementos = document.querySelectorAll('#todo-list li');
+        elementos.forEach((elemento, i) => {
+            console.log(elemento,i);
+            elemento.addEventListener('click',() => {
+                console.log(elemento,i)
+            })
+        })
    }
 }
